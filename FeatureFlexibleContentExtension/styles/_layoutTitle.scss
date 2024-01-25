@@ -1,0 +1,68 @@
+.flyntFeatureFlexibleContentExtensionLayoutTitle {
+  --iframe-scale: 0.06;
+  --iframe-block-size: 768px;
+  --iframe-inline-size: 1440px;
+  block-size: calc(var(--iframe-block-size) * var(--iframe-scale));
+  inline-size: auto;
+
+  &-previewWrapper {
+    background-color: #fff;
+    block-size: calc(var(--iframe-block-size) * var(--iframe-scale));
+    border: 1px solid #ccd0d4;
+    display: inline-block;
+    inline-size: auto;
+    inset-block-end: 4px;
+    overflow: hidden;
+    position: absolute;
+
+    &:has(iframe) {
+      block-size: calc(var(--iframe-block-size) * var(--iframe-scale));
+      inline-size: calc(var(--iframe-inline-size) * var(--iframe-scale));
+
+      &::after {
+        background-color: transparent;
+        block-size: 100%;
+        content: '';
+        display: block;
+        inline-size: 100%;
+        inset-block-end: 0;
+        inset-inline-start: 0;
+        position: absolute;
+        z-index: 1;
+      }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        --iframe-scale: 0.25;
+        z-index: 2147483648;
+      }
+    }
+  }
+
+  &-iframe {
+    block-size: var(--iframe-block-size);
+    inline-size: var(--iframe-inline-size);
+    pointer-events: none;
+    scale: var(--iframe-scale);
+    transform-origin: 0 0;
+  }
+
+  &-image {
+    display: block;
+    inline-size: auto;
+    max-block-size: calc(var(--iframe-block-size) * var(--iframe-scale));
+    max-inline-size: calc(var(--iframe-inline-size) * var(--iframe-scale));
+    object-fit: contain;
+  }
+
+  &-label {
+    margin-inline-start: calc(var(--iframe-inline-size) * var(--iframe-scale));
+    padding-inline-start: 1ch;
+    white-space: nowrap;
+  }
+}
+
+.ui-sortable:has(.ui-sortable-helper) .flyntFeatureFlexibleContentExtensionLayoutTitle-previewWrapper:hover {
+  --iframe-scale: 0.06; // reset to default
+}

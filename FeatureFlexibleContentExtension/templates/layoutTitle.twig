@@ -1,0 +1,13 @@
+<span class="flyntFeatureFlexibleContentExtensionLayoutTitle">
+  {% if iframe %}
+    <span class="flyntFeatureFlexibleContentExtensionLayoutTitle-previewWrapper">
+      <iframe class="flyntFeatureFlexibleContentExtensionLayoutTitle-iframe" title="{{ iframe.title|e('wp_kses_post') }}" data-src="{{ iframe.src|e('esc_url') }}"></iframe>
+    </span>
+  {% endif %}
+  {% if componentScreenshot %}
+    <span class="flyntFeatureFlexibleContentExtensionLayoutTitle-previewWrapper">
+      <img class="flyntFeatureFlexibleContentExtensionLayoutTitle-image" src={{ componentScreenshot.url|e('esc_url') }} width="{{ componentScreenshot.width|e }}" height="{{ componentScreenshot.height|e }}" alt="{{ componentScreenshot.alt|e }}" loading="lazy">
+    </span>
+  {% endif %}
+  <span class="flyntFeatureFlexibleContentExtensionLayoutTitle-label">{{ title|e('wp_kses_post') }}</span>
+</span>

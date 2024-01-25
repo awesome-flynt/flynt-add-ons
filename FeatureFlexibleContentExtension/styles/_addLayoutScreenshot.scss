@@ -1,0 +1,21 @@
+.flyntFeatureFlexibleContentExtensionAddLayout {
+  &-imageWrapper {
+    inset-block-end: 0;
+    inset-inline-end: 100%;
+    position: absolute;
+  }
+
+  &-screenshot {
+    background: #fff;
+    block-size: auto;
+    border: 3px solid #2f353e;
+    border-radius: 3px;
+    display: block;
+    inline-size: 33vw;
+    inset-block-end: 0;
+    inset-inline-end: 10px;
+    max-inline-size: 400px;
+    object-fit: cover;
+    position: absolute;
+  }
+}

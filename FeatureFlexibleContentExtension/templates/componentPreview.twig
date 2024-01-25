@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="html {{ body_class }}" {{ site.language_attributes }}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ function('wp_head') }}
+    <style>
+      html {
+        display: grid;
+        align-content: center;
+        min-height: 100vh;
+      }
+      body {
+        overflow: hidden;
+      }
+    </style>
+    <script>
+      // Overwrite matchMedia to always return true for prefers-reduced-motion
+      window.matchMedia = function (query) {
+        if (query === '(prefers-reduced-motion: reduce)') {
+          return {
+            matches: true,
+            media: query,
+            onchange: null,
+            addListener: function () {},
+            removeListener: function () {},
+            addEventListener: function () {},
+            removeEventListener: function () {},
+            dispatchEvent: function () {
+              return false;
+            }
+          };
+        }
+        return window.matchMedia(query);
+      };
+    </script>
+  </head>
+  <body>
+    {% if componentData %}
+      {{ renderComponent(componentData) }}
+    {% endif %}
+    <div class="wpFooter">
+      {{ function('wp_footer') }}
+    </div>
+  </body>
+</html>

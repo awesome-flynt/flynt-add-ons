@@ -1,0 +1,18 @@
+<flynt-component load:on="idle" id="FeatureLiveEditor" name="FeatureLiveEditor" aria-hidden="{{ isLiveEditorVisible ? 'false' : 'true' }}">
+  <iframe data-ref="iFrameEditor" class="iframe-editor" title="{{ __('Live Editor', 'flynt') }}" loading="lazy" src="{{ srcEditor|e('esc_url') }}"></iframe>
+  <div data-ref="iFrameContentWrapper" class="iFrameContentWrapper">
+    <iframe data-ref="iFrameContent" class="iframe-content" title="{{ post.title|e('wp_kses_post') }}" loading="lazy" src="{{ srcContent|e('esc_url') }}"></iframe>
+  </div>
+  <div class="actions">
+    <div class="actions-content-scale">
+      <input type="range" id="actions-content-scale-input" data-ref="inputContentScale" min="20" max="200" value="100"/>
+      <label for="actions-content-scale-input">{{ __('Scale', 'flynt') }}</label>
+      <button class="actions-content-scale-button" data-ref="buttonResetScale">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
+        </svg>
+        <span class="visuallyHidden">{{ __('Reset', 'flynt') }}</span>
+      </button>
+    </div>
+  </div>
+</flynt-component>

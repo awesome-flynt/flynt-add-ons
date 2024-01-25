@@ -1,0 +1,108 @@
+flynt-component[name='FeatureLiveEditor'] {
+  --max-block-size: calc(100vh - var(--wp-admin--admin-bar--height));
+  background-color: #fff;
+  inline-size: 100vw;
+  inset: var(--wp-admin--admin-bar--height) 0 0 0;
+  max-block-size: var(--max-block-size);
+  position: fixed;
+  z-index: 2147483647;
+
+  &[aria-hidden='true'] {
+    display: none;
+  }
+
+  &[aria-hidden='false'] {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    > * {
+      max-block-size: calc(50vh - var(--wp-admin--admin-bar--height) / 2);
+    }
+
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      grid-template-columns: min-content 1fr;
+      grid-template-rows: unset;
+
+      > * {
+        max-block-size: unset;
+      }
+    }
+  }
+
+  iframe {
+    background-color: #fff;
+    block-size: 100%;
+    border: 0;
+    box-shadow:
+      0.7px 0 5.3px rgba(0, 0, 0, 0.02),
+      2.2px 0 17.9px rgba(0, 0, 0, 0.03),
+      10px 0 80px rgba(0, 0, 0, 0.05);
+    inline-size: 100%;
+    max-block-size: var(--max-block-size);
+  }
+
+  .iFrameContentWrapper {
+    --inline-size: 100%;
+    block-size: 100%;
+    inline-size: var(--inline-size);
+    margin-inline: auto;
+  }
+
+  .iframe-editor {
+    border-inline-end: solid 1px #dcdcde;
+    inline-size: 100vw;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      inline-size: min(600px, 100vw);
+      max-inline-size: 600px;
+      min-inline-size: 320px;
+      resize: horizontal;
+    }
+  }
+
+  .iframe-content {
+    --scale: 1;
+    --inline-size: 100%;
+    block-size: 100%;
+    inline-size: var(--inline-size);
+    margin-inline: auto;
+    scale: var(--scale);
+    transform-origin: top left;
+  }
+
+  .actions {
+    inset: auto 1rem 1rem auto;
+    position: absolute;
+
+    * {
+      font-size: 1rem;
+    }
+
+    &-content-scale {
+      align-items: center;
+      display: flex;
+      gap: 10px;
+    }
+
+    &-content-scale-button {
+      block-size: 44px;
+      cursor: pointer;
+      display: grid;
+      inline-size: 44px;
+      place-items: center;
+
+      svg {
+        block-size: 24px;
+        inline-size: 24px;
+      }
+    }
+  }
+}
+
+// stylelint-disable selector-max-id
+#wpadminbar #wp-admin-bar-toggle-live-editor.live-editor-active {
+  background-color: #135e96;
+  color: #fff;
+}

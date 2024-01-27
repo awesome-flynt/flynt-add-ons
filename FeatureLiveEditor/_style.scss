@@ -2,7 +2,8 @@ flynt-component[name='FeatureLiveEditor'] {
   --max-block-size: calc(100vh - var(--wp-admin--admin-bar--height));
   background-color: #fff;
   inline-size: 100vw;
-  inset: var(--wp-admin--admin-bar--height) 0 0 0;
+  inset-block: var(--wp-admin--admin-bar--height) 0;
+  inset-inline: 0;
   max-block-size: var(--max-block-size);
   position: fixed;
   z-index: 2147483647;
@@ -73,7 +74,8 @@ flynt-component[name='FeatureLiveEditor'] {
   }
 
   .actions {
-    inset: auto 1rem 1rem auto;
+    inset-block: auto 1rem;
+    inset-inline: auto 1rem;
     position: absolute;
 
     * {

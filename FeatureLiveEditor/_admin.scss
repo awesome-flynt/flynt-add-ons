@@ -54,7 +54,8 @@
     border-radius: 0 !important;
     display: flex;
     inline-size: calc(100% - 20px);
-    inset: 0 0 auto auto;
+    inset-block: 0 auto;
+    inset-inline: auto 0;
     justify-content: space-between;
     padding-block: 5px !important;
     padding-inline: 10px !important;

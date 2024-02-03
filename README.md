@@ -11,3 +11,7 @@ Let's turn this place into a hub of innovation. Your vibe, your code. Ready to r
 ## Other Flynt related projects
 
 1. [Components Overview for Flynt](https://github.com/timohubois/components-overview-flynt) – A WordPress plugin to display an overview of where the components of the Flynt theme are being used.
+
+## Miscellaneous
+
+1. [Twigcs](https://github.com/friendsoftwig/twigcs) – The missing checkstyle for twig!

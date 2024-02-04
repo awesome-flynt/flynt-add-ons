@@ -1,0 +1,28 @@
+{
+  "name": "awesome-flynt/rector",
+  "description": "Rector – Instant Upgrades and Automated Refactoring of any PHP 5.3+ code",
+  "type": "rector",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Timo Hubois",
+      "email": "timo.hubois@bleech.de"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.8",
+    "rector/rector": "^0.19.6",
+    "php-stubs/wordpress-stubs": "^6.4",
+    "php-stubs/acf-pro-stubs": "^6.1"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  }
+}

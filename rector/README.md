@@ -6,7 +6,7 @@
 
 1. Download the `rector` folder and move the `rector.php` inside your theme folder.
 2. Install `require-dev` packages from `composer.json` file in to your theme.
-3. Adjust folders or files to skip `rector.php`
+3. Adjust folders or files to skip inside `rector.php`.
 
 ```php
 $rectorConfig->skip([

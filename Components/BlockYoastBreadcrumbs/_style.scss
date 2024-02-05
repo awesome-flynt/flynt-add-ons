@@ -1,0 +1,27 @@
+flynt-component[name='BlockYoastBreadcrumbs'] {
+  font-size: var(--font-size-body-small);
+  padding-block-end: calc(var(--box-spacing) / 2);
+  padding-block-start: calc(var(--box-spacing) / 2);
+
+  &[data-theme] + [data-theme].componentSpacing {
+    margin-block-start: calc(-1 * var(--box-spacing) / 2);
+  }
+
+  .breadcrumbs {
+    align-items: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.66ch;
+  }
+
+  a {
+    font-weight: unset;
+    text-decoration: none;
+  }
+
+  .separator {
+    font-size: calc(0.66 * var(--font-size-body-small));
+    inset-block-start: -2px;
+    position: relative;
+  }
+}

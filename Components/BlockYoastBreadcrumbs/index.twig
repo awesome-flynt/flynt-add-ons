@@ -1,0 +1,7 @@
+{% if not options.isBreadcrumbsDisabled and breadcrumb %}
+  <flynt-component name="BlockYoastBreadcrumbs" {{ options.theme ? 'data-theme="' ~ options.theme|e ~ '"' }}>
+    <div class="container">
+      {{ breadcrumb|e('wp_kses_post') }}
+    </div>
+  </flynt-component>
+{% endif %}

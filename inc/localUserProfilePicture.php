@@ -71,10 +71,8 @@ add_filter('get_avatar', function (string $avatar, $idOrEmail, int $size): strin
 
     if (is_numeric($idOrEmail)) {
         $user = get_user_by('id', (int) $idOrEmail);
-    } elseif (is_object($idOrEmail) && !empty($idOrEmail->user_id)) {
+    } elseif (!empty($idOrEmail->user_id)) {
         $user = get_user_by('id', (int) $idOrEmail->user_id);
-    } else {
-        $user = get_user_by('email', $idOrEmail);
     }
 
     if (!$user) {
@@ -119,10 +117,8 @@ add_filter('get_avatar_url', function (string $url, $idOrEmail) {
 
     if (is_numeric($idOrEmail)) {
         $user = get_user_by('id', (int) $idOrEmail);
-    } elseif (is_object($idOrEmail) && !empty($idOrEmail->user_id)) {
+    } elseif (!empty($idOrEmail->user_id)) {
         $user = get_user_by('id', (int) $idOrEmail->user_id);
-    } else {
-        $user = get_user_by('email', $idOrEmail);
     }
 
     if (!$user) {

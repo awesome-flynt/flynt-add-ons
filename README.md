@@ -15,3 +15,4 @@ Let's turn this place into a hub of innovation. Your vibe, your code. Ready to r
 ## Miscellaneous
 
 1. [Twigcs](https://github.com/friendsoftwig/twigcs) – The missing checkstyle for twig!
+2. [Disable Sync Repeater Option for ACFML](https://wordpress.org/plugins/disable-sync-repeater-option-for-acfml) – Don't sync repeater fields across translations.

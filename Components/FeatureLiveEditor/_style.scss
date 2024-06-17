@@ -84,8 +84,11 @@ flynt-component[name='FeatureLiveEditor'] {
 
     &-content-scale {
       align-items: center;
+      background: rgb(0 0 0 / 50%);
+      border-radius: 44px;
       display: flex;
       gap: 10px;
+      padding-inline: 10px;
     }
 
     &-content-scale-button {

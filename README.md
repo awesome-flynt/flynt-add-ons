@@ -11,6 +11,7 @@ Let's turn this place into a hub of innovation. Your vibe, your code. Ready to r
 ## Other Flynt related projects
 
 1. [Components Overview for Flynt](https://github.com/timohubois/components-overview-flynt) – A WordPress plugin to display an overview of where the components of the Flynt theme are being used.
+2. [Flynt2 Component Scaffolder](https://github.com/aslauris/flynt2-component-scaffolder) – The missing component generator for Flynt 2.x.
 
 ## Miscellaneous
 

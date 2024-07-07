@@ -14,18 +14,18 @@
 
 namespace Flynt\AcmlDisableRepeaterSync;
 
-/*
-* Define the default value for the repeater sync checkbox.
-*
-* @see https://wpml.org/documentation/support/wpml-coding-api/wpml-constants/#acfml_repeater_sync_default
-*/
+/**
+ * Define the default value for the repeater sync checkbox.
+ *
+ * @see https://wpml.org/documentation/support/wpml-coding-api/wpml-constants/#acfml_repeater_sync_default
+ */
 if (!defined('ACFML_REPEATER_SYNC_DEFAULT')) {
     define('ACFML_REPEATER_SYNC_DEFAULT', false);
 }
 
-/*
-* Remove the meta box that displays the repeater sync checkbox in the post edit screen.
-*/
+/**
+ * Remove the meta box that displays the repeater sync checkbox in the post edit screen.
+ */
 add_action('add_meta_boxes', function (): void {
     if (!class_exists('ACFML\Repeater\Sync\CheckboxUI') || !defined('ACFML\Repeater\Sync\CheckboxUI::META_BOX_ID')) {
         return;
@@ -44,9 +44,9 @@ add_action('add_meta_boxes', function (): void {
     remove_meta_box($metaBoxId, $postType, 'normal');
 }, 11);
 
-/*
-* Delete the option that stores the sync status.
-*/
+/**
+ * Delete the option that stores the sync status.
+ */
 add_action('plugins_loaded', function (): void {
     if (!is_admin() || !class_exists('ACFML\Repeater\Sync\CheckboxOption') || !defined('ACFML\Repeater\Sync\CheckboxOption::SYNCHRONISE_WP_OPTION_NAME')) {
         return;

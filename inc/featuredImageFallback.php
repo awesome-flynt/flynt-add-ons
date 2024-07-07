@@ -8,6 +8,7 @@
  * 1. Add a new field group to the global options page with an image field to select an image from the media library.
  * 2. Add a filter to the post_thumbnail_html hook to replace the featured image with the fallback image.
  * 3. Add a filter to the get_post_metadata hook to set the fallback image as the featured image if no featured image is set.
+ *
  */
 
 namespace Flynt\FallbackFeaturedImage;

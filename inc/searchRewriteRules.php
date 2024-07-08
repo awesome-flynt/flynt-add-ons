@@ -27,3 +27,16 @@ add_filter('search_rewrite_rules', function (array $searchRewrite): array {
 
     return $newSearchRewriteRules;
 });
+
+/**
+ * Redirect the search page when an url parameter is set,
+ * for example in forms.
+ */
+add_action('template_redirect', function () {
+    if (!isset($_GET['s'])) {
+        return;
+    }
+
+    $searchUrl = get_search_link();
+    wp_redirect($searchUrl);
+});

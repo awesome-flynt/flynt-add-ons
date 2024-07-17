@@ -1,7 +1,6 @@
 /* global acf */
 
 if (typeof acf !== 'undefined') {
-
   /**
    * Available since ACF 6.2.8
    * See: https://www.advancedcustomfields.com/resources/javascript-api/#filters-select2_escape_markup

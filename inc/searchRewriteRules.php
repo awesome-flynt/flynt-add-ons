@@ -32,10 +32,10 @@ add_filter('search_rewrite_rules', function (array $searchRewrite): array {
  * for example in forms.
  */
 add_action('template_redirect', function () {
-    if (!isset($_GET['s'])) {
+    if (!is_search() || !isset($_GET['s'])) {
         return;
     }
 
     $searchUrl = get_search_link();
-    wp_redirect($searchUrl);
+    wp_safe_redirect($searchUrl);
 });

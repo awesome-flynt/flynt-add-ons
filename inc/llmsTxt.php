@@ -11,10 +11,7 @@ namespace Flynt\LlmsTxt;
 
 use Flynt\Utils\Options;
 
-add_action('template_redirect', __NAMESPACE__ . '\serve', 0);
-
-function serve(): void
-{
+add_action('template_redirect', function (): void {
     $requestUri = isset($_SERVER['REQUEST_URI']) ? wp_unslash($_SERVER['REQUEST_URI']) : '';
     $requestPath = wp_parse_url($requestUri, PHP_URL_PATH);
     $llmsPath = wp_parse_url(home_url('/llms.txt'), PHP_URL_PATH);
@@ -43,7 +40,7 @@ function serve(): void
 
     echo sanitize_textarea_field($content);
     exit;
-}
+}, 0);
 
 Options::addTranslatable('LlmsTxt', [
     [
